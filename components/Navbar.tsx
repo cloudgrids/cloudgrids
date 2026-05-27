@@ -38,13 +38,11 @@ export function Navbar() {
 			)}
 		>
 			<nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 md:px-6">
-				{/* Logo */}
 				<Link href="/" className="flex items-center gap-2.5 group" aria-label="CloudGrids home">
 					<Logo width={28} height={28} className="transition-transform duration-200 group-hover:scale-110" />
 					<span className="text-base font-bold tracking-tight text-foreground">CloudGrids</span>
 				</Link>
 
-				{/* Desktop nav */}
 				<div className="hidden items-center gap-1 md:flex">
 					{navLinks.map((link) => (
 						<button
@@ -58,7 +56,6 @@ export function Navbar() {
 					))}
 				</div>
 
-				{/* Actions */}
 				<div className="flex items-center gap-2">
 					<ThemeToggle />
 					<GithubStar />

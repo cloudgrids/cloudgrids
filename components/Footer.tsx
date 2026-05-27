@@ -30,7 +30,6 @@ export function Footer() {
 		<footer className="border-t border-border py-12 px-4">
 			<div className="mx-auto max-w-6xl">
 				<div className="grid grid-cols-1 gap-10 md:grid-cols-4 mb-10">
-					{/* Brand */}
 					<div className="md:col-span-2">
 						<Link href="/" className="inline-flex items-center gap-2.5 mb-3 group">
 							<Logo width={28} height={28} className="transition-transform duration-200 group-hover:scale-110" />
@@ -56,7 +55,6 @@ export function Footer() {
 						</div>
 					</div>
 
-					{/* Link columns */}
 					{Object.entries(footerLinks).map(([category, links]) => (
 						<div key={category}>
 							<p className="mb-3 text-xs font-semibold uppercase tracking-widest text-foreground">{category}</p>

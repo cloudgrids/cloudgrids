@@ -17,7 +17,6 @@ export function OpenSource() {
 			<div className="mx-auto max-w-6xl">
 				<div className="overflow-hidden rounded-2xl border border-border bg-card">
 					<div className="grid grid-cols-1 md:grid-cols-2">
-						{/* Left: content */}
 						<div className="flex flex-col justify-center gap-6 p-8 md:p-12">
 							<motion.div
 								initial={{ opacity: 0, y: 16 }}
@@ -64,7 +63,6 @@ export function OpenSource() {
 							</motion.div>
 						</div>
 
-						{/* Right: stats */}
 						<div className="flex flex-col justify-center gap-4 border-t border-border bg-muted/30 p-8 md:border-l md:border-t-0 md:p-12">
 							{stats.map((stat, i) => {
 								const Icon = stat.icon;

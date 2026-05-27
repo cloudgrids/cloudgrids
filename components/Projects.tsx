@@ -58,7 +58,6 @@ export function Projects() {
 	return (
 		<section id="projects" className="py-24 px-4">
 			<div className="mx-auto max-w-6xl">
-				{/* Header */}
 				<div className="mb-12 text-center">
 					<Badge variant="outline" className="mb-4 border-primary/20 bg-primary/5 text-primary">
 						Projects
@@ -71,7 +70,6 @@ export function Projects() {
 					</p>
 				</div>
 
-				{/* Cards */}
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 					{projects.map((project, i) => {
 						const Icon = project.icon;
@@ -107,7 +105,6 @@ export function Projects() {
 											{project.description}
 										</CardDescription>
 
-										{/* Tags */}
 										<div className="flex flex-wrap gap-1.5">
 											{project.tags.map((tag) => (
 												<span
@@ -119,7 +116,6 @@ export function Projects() {
 											))}
 										</div>
 
-										{/* Links */}
 										{project.links.length > 0 && (
 											<div className="mt-auto flex gap-3">
 												{project.links.map((link) => (

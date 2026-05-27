@@ -1,25 +1,117 @@
-/**
- * CloudGrids wireframe cloud logo — pure SVG, renderable by next/og (Satori).
- * Cyan (#22D3EE) to purple (#A855F7) gradient wireframe low-poly cloud.
- */
+const voxels = [
+	// Bottom layer (y=0)
+	[-2, 0, 0],
+	[-1, 0, 0],
+	[0, 0, 0],
+	[1, 0, 0],
+	[2, 0, 0],
+	[-1, 0, 1],
+	[0, 0, 1],
+	[1, 0, 1],
+	[-1, 0, -1],
+	[0, 0, -1],
+	[1, 0, -1],
+	// Second layer (y=1)
+	[-1, 1, 0],
+	[0, 1, 0],
+	[1, 1, 0],
+	[0, 1, 1],
+	[0, 1, -1],
+	// Third layer (y=2)
+	[0, 2, 0]
+];
+
+const edgesSet = new Set<string>();
+const verticesSet = new Set<string>();
+
+voxels.forEach(([x, y, z]) => {
+	const v = [
+		`${x},${y},${z}`,
+		`${x + 1},${y},${z}`,
+		`${x + 1},${y},${z + 1}`,
+		`${x},${y},${z + 1}`,
+		`${x},${y + 1},${z}`,
+		`${x + 1},${y + 1},${z}`,
+		`${x + 1},${y + 1},${z + 1}`,
+		`${x},${y + 1},${z + 1}`
+	];
+
+	v.forEach((vertex) => verticesSet.add(vertex));
+
+	const edgePairs = [
+		[v[0], v[1]],
+		[v[1], v[2]],
+		[v[2], v[3]],
+		[v[3], v[0]],
+		[v[4], v[5]],
+		[v[5], v[6]],
+		[v[6], v[7]],
+		[v[7], v[4]],
+		[v[0], v[4]],
+		[v[1], v[5]],
+		[v[2], v[6]],
+		[v[3], v[7]]
+	];
+
+	edgePairs.forEach(([a, b]) => {
+		const edge = [a, b].sort().join('|');
+		edgesSet.add(edge);
+	});
+});
+
+const uniqueVertices = Array.from(verticesSet);
+const vertexToIndex = new Map(uniqueVertices.map((v, i) => [v, i]));
+
+const projectedPoints = uniqueVertices.map((v) => {
+	const [x, y, z] = v.split(',').map(Number);
+	const px = (x - z) * Math.cos(Math.PI / 6);
+	const py = -y + (x + z) * Math.sin(Math.PI / 6);
+	return [px, py];
+});
+
+const minPx = Math.min(...projectedPoints.map((p) => p[0]));
+const maxPx = Math.max(...projectedPoints.map((p) => p[0]));
+const minPy = Math.min(...projectedPoints.map((p) => p[1]));
+const maxPy = Math.max(...projectedPoints.map((p) => p[1]));
+
+const cx = (minPx + maxPx) / 2;
+const cy = (minPy + maxPy) / 2;
+
+const widthPx = maxPx - minPx;
+const heightPy = maxPy - minPy;
+
+const scaleX = 90 / (widthPx || 1);
+const scaleY = 60 / (heightPy || 1);
+const scale = Math.min(scaleX, scaleY);
+
+const points = projectedPoints.map((p) => [62 + (p[0] - cx) * scale, 48 + (p[1] - cy) * scale]);
+
+const lines = Array.from(edgesSet).map((edge) => {
+	const [a, b] = edge.split('|');
+	return [vertexToIndex.get(a)!, vertexToIndex.get(b)!];
+});
+
 export function Logo({ width = 32, height = 32, className }: { width?: number; height?: number; className?: string }) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 120 90"
-			fill="none"
+			viewBox="0 0 124 96"
 			width={width}
 			height={height}
 			className={className}
+			fill="none"
 			aria-hidden="true"
 		>
 			<defs>
-				<linearGradient id="cg-grad" x1="0" y1="0" x2="120" y2="90" gradientUnits="userSpaceOnUse">
-					<stop stopColor="#22D3EE" />
-					<stop offset="1" stopColor="#A855F7" />
+				<linearGradient id="cg-gradient" x1="8" y1="20" x2="112" y2="84" gradientUnits="userSpaceOnUse">
+					<stop offset="0%" stopColor="#22D3EE" />
+					<stop offset="45%" stopColor="#60A5FA" />
+					<stop offset="100%" stopColor="#D946EF" />
 				</linearGradient>
-				<filter id="cg-glow">
-					<feGaussianBlur stdDeviation="1.5" result="blur" />
+
+				<filter id="cg-glow" x="-50%" y="-50%" width="200%" height="200%">
+					<feGaussianBlur stdDeviation="2.8" result="blur" />
+
 					<feMerge>
 						<feMergeNode in="blur" />
 						<feMergeNode in="SourceGraphic" />
@@ -27,74 +119,30 @@ export function Logo({ width = 32, height = 32, className }: { width?: number; h
 				</filter>
 			</defs>
 
-			{/* Cloud wireframe mesh lines */}
-			<g filter="url(#cg-glow)" stroke="url(#cg-grad)" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
-				{/* Outer cloud boundary */}
-				<path d="M20 72 Q10 72 10 60 Q10 46 22 44 Q20 30 34 26 Q42 14 58 18 Q70 12 80 22 Q94 18 100 32 Q112 34 112 48 Q112 62 100 64 Q95 72 20 72Z" />
+			{/* glow */}
+			<g filter="url(#cg-glow)" stroke="url(#cg-gradient)" strokeWidth="2.4" opacity="0.4">
+				{lines.map(([a, b], i) => {
+					const p1 = points[a];
+					const p2 = points[b];
 
-				{/* Internal mesh — horizontal layer lines */}
-				<line x1="22" y1="64" x2="98" y2="64" />
-				<line x1="18" y1="56" x2="102" y2="56" />
-				<line x1="22" y1="48" x2="100" y2="48" />
-				<line x1="28" y1="40" x2="96" y2="40" />
-				<line x1="36" y1="32" x2="88" y2="32" />
-				<line x1="46" y1="24" x2="76" y2="24" />
-
-				{/* Internal mesh — vertical/diagonal lines */}
-				<line x1="34" y1="24" x2="20" y2="72" />
-				<line x1="46" y1="22" x2="34" y2="72" />
-				<line x1="58" y1="18" x2="48" y2="72" />
-				<line x1="70" y1="22" x2="62" y2="72" />
-				<line x1="82" y1="28" x2="76" y2="72" />
-				<line x1="94" y1="36" x2="90" y2="72" />
-
-				{/* Cross-diagonals */}
-				<line x1="22" y1="44" x2="46" y2="72" />
-				<line x1="28" y1="36" x2="62" y2="72" />
-				<line x1="36" y1="30" x2="76" y2="72" />
-				<line x1="48" y1="24" x2="90" y2="64" />
-				<line x1="62" y1="20" x2="100" y2="56" />
-				<line x1="76" y1="22" x2="104" y2="48" />
-
-				{/* Back-diagonals */}
-				<line x1="100" y1="42" x2="76" y2="72" />
-				<line x1="96" y1="36" x2="62" y2="72" />
-				<line x1="88" y1="30" x2="46" y2="72" />
-				<line x1="78" y1="24" x2="32" y2="64" />
-				<line x1="64" y1="20" x2="20" y2="56" />
+					return <line key={`glow-${i}`} x1={p1[0]} y1={p1[1]} x2={p2[0]} y2={p2[1]} />;
+				})}
 			</g>
 
-			{/* Mesh nodes */}
-			<g fill="url(#cg-grad)" filter="url(#cg-glow)">
-				{[
-					[34, 26],
-					[46, 22],
-					[58, 18],
-					[70, 22],
-					[82, 28],
-					[94, 36],
-					[22, 44],
-					[34, 40],
-					[46, 38],
-					[60, 36],
-					[74, 38],
-					[88, 40],
-					[100, 44],
-					[18, 56],
-					[30, 54],
-					[46, 52],
-					[60, 50],
-					[76, 52],
-					[92, 54],
-					[104, 56],
-					[22, 64],
-					[36, 64],
-					[52, 64],
-					[68, 64],
-					[84, 64],
-					[100, 64]
-				].map(([cx, cy], i) => (
-					<circle key={i} cx={cx} cy={cy} r="2" />
+			{/* sharp mesh */}
+			<g stroke="url(#cg-gradient)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+				{lines.map(([a, b], i) => {
+					const p1 = points[a];
+					const p2 = points[b];
+
+					return <line key={`line-${i}`} x1={p1[0]} y1={p1[1]} x2={p2[0]} y2={p2[1]} />;
+				})}
+			</g>
+
+			{/* nodes */}
+			<g filter="url(#cg-glow)">
+				{points.map(([x, y], i) => (
+					<circle key={`node-${i}`} cx={x} cy={y} r="2" fill="white" />
 				))}
 			</g>
 		</svg>
