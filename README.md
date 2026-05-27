@@ -1,7 +1,6 @@
 <div align="center">
 
-<img src="https://media.cloudgrids.tech/cloudgrids/logo.svg" width="120" height="120" alt="CloudGrids" />
-
+[![CloudGrids](https://media.cloudgrids.tech/cloudgrids/logo.svg)]()
 <h1>CloudGrids</h1>
 
 <p><strong>CloudGrids is an open-source organisation that builds developer tools and lets builders host their projects under *.cloudgrids.tech subdomains. Ship your next project under our domain.</strong></p>
