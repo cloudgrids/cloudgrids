@@ -73,9 +73,9 @@ export const STEPS = [
 	{
 		step: '02',
 		icon: Mail,
-		title: 'Transfer your repo',
+		title: 'Connect GitHub',
 		description:
-			"To get a subdomain, transfer your project's GitHub repository to the @cloudgrids organization. You retain admin access! Open a GitHub issue or email us to coordinate."
+			'Connect your GitHub repository and deploy instantly. Deploy directly from GitHub with automatic builds and updates.'
 	},
 	{
 		step: '03',

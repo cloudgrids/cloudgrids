@@ -30,8 +30,8 @@ If you are building an open-source tool, library, or portfolio, you can host it 
 ## Get your own *.cloudgrids.tech subdomain
 
 1. **Build something cool**: Create your open-source project and host it anywhere (Vercel, Netlify, GitHub Pages, etc.).
-2. **Transfer your repository**: To get a subdomain, you must transfer your project's GitHub repository to the `cloudgrids` organization. You will retain admin access to continue building. Open a [GitHub issue](https://github.com/cloudgrids) or email us at `support@cloudgrids.tech` to coordinate the transfer and request your subdomain.
-3. **Ship it**: We will set up the subdomain and point it to your deployment. Your project goes live on `*.cloudgrids.tech`!
+2. **Connect GitHub**: Connect your GitHub repository and deploy instantly. Deploy directly from GitHub with automatic builds and updates. We'll set up your environment and point it to your deployment.
+3. **Ship it**: Your project goes live on `*.cloudgrids.tech`!
 
 ---
 
