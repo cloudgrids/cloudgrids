@@ -3,12 +3,12 @@
 import { Logo } from '@/components/Logo';
 import { Separator } from '@/components/ui/separator';
 import { AppConfig } from '@/lib/app.config';
-import { COMMUNITY, PROJECTS, SOCIALS, LEGAL } from '@/lib/constants';
+import { LEGAL, PROJECTS, RESOURCES, SOCIALS } from '@/lib/constants';
 import Link from 'next/link';
 
 const footerLinks = {
-	Projects: PROJECTS,
-	Community: COMMUNITY,
+	Products: PROJECTS,
+	Resources: RESOURCES,
 	Legal: LEGAL
 };
 
@@ -23,9 +23,9 @@ export function Footer() {
 							<span className="text-base font-bold tracking-tight text-foreground">{AppConfig.applicationName}</span>
 						</Link>
 						<p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-							An open-source organization building developer tools and powering{' '}
-							<span className="font-medium text-foreground">*.cloudgrids.tech</span> subdomains.
-						</p>
+						Cloud deployment platform for developers, indie hackers, and AI builders.{' '}
+						<span className="font-medium text-foreground">*.cloudgrids.tech</span> — deploy from GitHub, go live in minutes.
+					</p>
 						<div className="flex items-center gap-2 mt-5">
 							{SOCIALS.map(({ icon: Icon, href, label }) => (
 								<a

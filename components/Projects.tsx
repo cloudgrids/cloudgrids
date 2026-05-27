@@ -22,13 +22,13 @@ export function Projects() {
 			<div className="mx-auto max-w-6xl">
 				<div className="mb-12 text-center">
 					<Badge variant="outline" className="mb-4 border-primary/20 bg-primary/5 text-primary">
-						Projects
+						Ecosystem
 					</Badge>
 					<h2 className="mb-3 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-						Built by CloudGrids
+						The CloudGrids ecosystem
 					</h2>
 					<p className="mx-auto max-w-lg text-sm text-muted-foreground md:text-base">
-						Open-source packages and tools shipped on our subdomains.
+						A growing suite of open-source tools, packages, and platform products — all under one roof.
 					</p>
 				</div>
 

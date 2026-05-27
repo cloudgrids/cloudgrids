@@ -2,7 +2,7 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { STATS } from '@/lib/constants';
+import { EARLY_ACCESS_FORM_URL, STATS } from '@/lib/constants';
 import { motion } from 'framer-motion';
 import { GitBranch } from 'lucide-react';
 
@@ -23,11 +23,11 @@ export function OpenSource() {
 									Open Source
 								</Badge>
 								<h2 className="mb-3 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-									Everything we build is open
+									Built in the open, shipping for real
 								</h2>
 								<p className="text-sm text-muted-foreground md:text-base leading-relaxed">
-									Every project under CloudGrids is MIT-licensed and built in the open. Read the code, fork it,
-									contribute back. We believe in transparency and community-driven development.
+									CloudGrids is fully MIT-licensed and developed in public. Read the code, audit the infrastructure
+									decisions, fork it, and contribute back. Transparency is core to how we build.
 								</p>
 							</motion.div>
 
@@ -48,12 +48,12 @@ export function OpenSource() {
 									View on GitHub
 								</Button>
 								<Button
-									id="open-source-contact-cta"
+									id="open-source-early-access-cta"
 									variant="outline"
 									nativeButton={false}
-									render={<a href="mailto:support@cloudgrids.tech" />}
+									render={<a href={EARLY_ACCESS_FORM_URL} target="_blank" rel="noopener noreferrer" />}
 								>
-									Contact us
+									Request Early Access
 								</Button>
 							</motion.div>
 						</div>

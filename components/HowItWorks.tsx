@@ -22,10 +22,10 @@ export function HowItWorks() {
 						How it works
 					</Badge>
 					<h2 className="mb-3 text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-						Get your own <span className="text-primary">*.cloudgrids.tech</span>
+						From GitHub to live in{' '}<span className="text-primary">minutes</span>
 					</h2>
 					<p className="mx-auto max-w-lg text-sm text-muted-foreground md:text-base">
-						Three simple steps to get your project hosted under the CloudGrids umbrella.
+						Three steps from your repository to a live deployment on *.cloudgrids.tech.
 					</p>
 				</div>
 
@@ -64,21 +64,20 @@ export function HowItWorks() {
 					})}
 				</div>
 
-				<motion.p
+				<motion.div
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.5, delay: 0.5 }}
 					className="mt-10 text-center text-sm text-muted-foreground"
 				>
-					Ready?{' '}
+					Ready to deploy?{' '}
 					<a
-						href="https://github.com/cloudgrids"
-						target="_blank"
-						rel="noopener noreferrer"
+						href="#early-access"
+						onClick={(e) => { e.preventDefault(); document.querySelector('#early-access')?.scrollIntoView({ behavior: 'smooth' }); }}
 						className="font-medium text-primary underline-offset-4 hover:underline"
 					>
-						Open a GitHub issue
+						Request early access
 					</a>{' '}
 					or email{' '}
 					<a
@@ -87,7 +86,7 @@ export function HowItWorks() {
 					>
 						support@cloudgrids.tech
 					</a>
-				</motion.p>
+				</motion.div>
 			</div>
 		</section>
 	);
