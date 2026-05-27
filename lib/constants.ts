@@ -93,7 +93,7 @@ export const NAVBAR_LINKS = [
 ];
 
 export const STATS = [
-	{ icon: GitBranch, label: 'Active repos', value: '10+' },
+	{ icon: GitBranch, label: 'Active repos', value: '5+' },
 	{ icon: Users, label: 'Contributors', value: 'Growing' },
 	{ icon: Star, label: 'License', value: 'MIT' }
 ];
