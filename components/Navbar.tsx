@@ -4,15 +4,10 @@ import { GithubStar } from '@/components/GithubStar';
 import { Logo } from '@/components/Logo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
+import { NAVBAR_LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-
-const navLinks = [
-	{ label: 'Projects', href: '#projects' },
-	{ label: 'How it works', href: '#how-it-works' },
-	{ label: 'Open Source', href: '#open-source' }
-];
 
 export function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
@@ -44,7 +39,7 @@ export function Navbar() {
 				</Link>
 
 				<div className="hidden items-center gap-1 md:flex">
-					{navLinks.map((link) => (
+					{NAVBAR_LINKS.map((link) => (
 						<button
 							key={link.label}
 							id={`nav-${link.label.toLowerCase().replace(/\s+/g, '-')}`}

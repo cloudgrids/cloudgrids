@@ -3,33 +3,20 @@
 import { Logo } from '@/components/Logo';
 import { Separator } from '@/components/ui/separator';
 import { AppConfig } from '@/lib/app.config';
-import { GitBranch, Globe, Mail } from 'lucide-react';
+import { COMMUNITY, PROJECTS, SOCIALS, LEGAL } from '@/lib/constants';
 import Link from 'next/link';
 
 const footerLinks = {
-	Projects: [
-		{ label: 'tools.cloudgrids.tech', href: 'https://tools.cloudgrids.tech' },
-		{ label: 'downflux (npm)', href: 'https://www.npmjs.com/package/downflux' },
-		{ label: 'docs (coming soon)', href: '#' }
-	],
-	Community: [
-		{ label: 'GitHub Org', href: 'https://github.com/cloudgrids' },
-		{ label: 'Request a subdomain', href: 'https://github.com/cloudgrids' },
-		{ label: 'Contact', href: 'mailto:support@cloudgrids.tech' }
-	]
+	Projects: PROJECTS,
+	Community: COMMUNITY,
+	Legal: LEGAL
 };
-
-const socials = [
-	{ icon: GitBranch, href: 'https://github.com/cloudgrids', label: 'GitHub' },
-	{ icon: Globe, href: 'https://cloudgrids.tech', label: 'Website' },
-	{ icon: Mail, href: 'mailto:support@cloudgrids.tech', label: 'Email' }
-];
 
 export function Footer() {
 	return (
 		<footer className="border-t border-border py-12 px-4">
 			<div className="mx-auto max-w-6xl">
-				<div className="grid grid-cols-1 gap-10 md:grid-cols-4 mb-10">
+				<div className="grid grid-cols-1 gap-10 md:grid-cols-5 mb-10">
 					<div className="md:col-span-2">
 						<Link href="/" className="inline-flex items-center gap-2.5 mb-3 group">
 							<Logo width={28} height={28} className="transition-transform duration-200 group-hover:scale-110" />
@@ -40,7 +27,7 @@ export function Footer() {
 							<span className="font-medium text-foreground">*.cloudgrids.tech</span> subdomains.
 						</p>
 						<div className="flex items-center gap-2 mt-5">
-							{socials.map(({ icon: Icon, href, label }) => (
+							{SOCIALS.map(({ icon: Icon, href, label }) => (
 								<a
 									key={label}
 									href={href}

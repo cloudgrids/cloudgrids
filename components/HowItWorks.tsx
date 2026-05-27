@@ -1,32 +1,8 @@
 'use client';
 
 import { Badge } from '@/components/ui/badge';
+import { STEPS } from '@/lib/constants';
 import { motion } from 'framer-motion';
-import { GitBranch, Globe, Mail } from 'lucide-react';
-
-const steps = [
-	{
-		step: '01',
-		icon: GitBranch,
-		title: 'Build your project',
-		description:
-			'Create anything — a website, an app, a tool, a library. Any tech stack is welcome. All we ask is that it be open source.'
-	},
-	{
-		step: '02',
-		icon: Mail,
-		title: 'Transfer your repo',
-		description:
-			"To get a subdomain, transfer your project's GitHub repository to the @cloudgrids organization. You retain admin access! Open a GitHub issue or email us to coordinate."
-	},
-	{
-		step: '03',
-		icon: Globe,
-		title: 'Ship it',
-		description:
-			"We'll set up the subdomain and point it to your deployment. Your project goes live on *.cloudgrids.tech — for free!"
-	}
-];
 
 const fadeInUp = {
 	hidden: { opacity: 0, y: 24 },
@@ -54,7 +30,7 @@ export function HowItWorks() {
 				</div>
 
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-					{steps.map((s, i) => {
+					{STEPS.map((s, i) => {
 						const Icon = s.icon;
 						return (
 							<motion.div
@@ -80,7 +56,7 @@ export function HowItWorks() {
 									<p className="text-xs leading-relaxed text-muted-foreground">{s.description}</p>
 								</div>
 
-								{i < steps.length - 1 && (
+								{i < STEPS.length - 1 && (
 									<div className="absolute -right-3 top-1/2 hidden h-px w-6 -translate-y-1/2 bg-border md:block" />
 								)}
 							</motion.div>

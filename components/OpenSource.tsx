@@ -2,14 +2,9 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { STATS } from '@/lib/constants';
 import { motion } from 'framer-motion';
-import { GitBranch, Star, Users } from 'lucide-react';
-
-const stats = [
-	{ icon: GitBranch, label: 'Active repos', value: '10+' },
-	{ icon: Users, label: 'Contributors', value: 'Growing' },
-	{ icon: Star, label: 'License', value: 'MIT' }
-];
+import { GitBranch } from 'lucide-react';
 
 export function OpenSource() {
 	return (
@@ -64,7 +59,7 @@ export function OpenSource() {
 						</div>
 
 						<div className="flex flex-col justify-center gap-4 border-t border-border bg-muted/30 p-8 md:border-l md:border-t-0 md:p-12">
-							{stats.map((stat, i) => {
+							{STATS.map((stat, i) => {
 								const Icon = stat.icon;
 								return (
 									<motion.div
