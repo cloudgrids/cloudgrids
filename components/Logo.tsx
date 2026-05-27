@@ -80,9 +80,17 @@ const cy = (minPy + maxPy) / 2;
 const widthPx = maxPx - minPx;
 const heightPy = maxPy - minPy;
 
-const scaleX = 90 / (widthPx || 1);
-const scaleY = 60 / (heightPy || 1);
+const scaleX = 124 / (widthPx || 1);
+const scaleY = 96 / (heightPy || 1);
 const scale = Math.min(scaleX, scaleY);
+
+const padding = 4;
+const exactWidth = widthPx * scale;
+const exactHeight = heightPy * scale;
+const viewBoxMinX = 62 - exactWidth / 2 - padding;
+const viewBoxMinY = 48 - exactHeight / 2 - padding;
+const viewBoxWidth = exactWidth + padding * 2;
+const viewBoxHeight = exactHeight + padding * 2;
 
 const points = projectedPoints.map((p) => [62 + (p[0] - cx) * scale, 48 + (p[1] - cy) * scale]);
 
@@ -91,16 +99,17 @@ const lines = Array.from(edgesSet).map((edge) => {
 	return [vertexToIndex.get(a)!, vertexToIndex.get(b)!];
 });
 
-export function Logo({ width = 32, height = 32, className }: { width?: number; height?: number; className?: string }) {
+export function Logo({ width = "100%", height = "100%", className }: { width?: number | string; height?: number | string; className?: string }) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 124 96"
+			viewBox={`${viewBoxMinX} ${viewBoxMinY} ${viewBoxWidth} ${viewBoxHeight}`}
 			width={width}
 			height={height}
 			className={className}
 			fill="none"
 			aria-hidden="true"
+			overflow="visible"
 		>
 			<defs>
 				<linearGradient id="cg-gradient" x1="8" y1="20" x2="112" y2="84" gradientUnits="userSpaceOnUse">
