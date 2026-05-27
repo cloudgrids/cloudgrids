@@ -17,11 +17,9 @@ export function Hero() {
 			id="hero"
 			className="relative flex min-h-screen flex-col items-center justify-center px-4 pt-14 text-center"
 		>
-			{/* Subtle background radial */}
 			<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_60%,oklch(0.5_0.2_230/8%),transparent)] dark:bg-[radial-gradient(ellipse_60%_40%_at_50%_60%,oklch(0.72_0.18_220/10%),transparent)]" />
 
 			<div className="relative z-10 mx-auto max-w-4xl">
-				{/* Badge */}
 				<motion.div
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -32,7 +30,6 @@ export function Hero() {
 					Open Source · MIT License
 				</motion.div>
 
-				{/* Logo */}
 				<motion.div
 					initial={{ opacity: 0, scale: 0.85 }}
 					animate={{ opacity: 1, scale: 1 }}
@@ -42,7 +39,6 @@ export function Hero() {
 					<Logo width={96} height={96} className="drop-shadow-xl" />
 				</motion.div>
 
-				{/* Headline */}
 				<motion.h1
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -52,18 +48,16 @@ export function Hero() {
 					Ship your project on <span className="text-primary">*.cloudgrids.tech</span>
 				</motion.h1>
 
-				{/* Sub-headline */}
 				<motion.p
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.45, delay: 0.3 }}
 					className="mx-auto mb-8 max-w-2xl text-base text-muted-foreground md:text-lg"
 				>
-					CloudGrids is an open-source organisation that builds developer tools and lets builders host their projects
+					CloudGrids is an open-source organization that builds developer tools and lets builders host their projects
 					under our subdomain — for free.
 				</motion.p>
 
-				{/* Feature badges */}
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -81,7 +75,6 @@ export function Hero() {
 					))}
 				</motion.div>
 
-				{/* CTAs */}
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -98,7 +91,6 @@ export function Hero() {
 				</motion.div>
 			</div>
 
-			{/* Scroll hint */}
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}

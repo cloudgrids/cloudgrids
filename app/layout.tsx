@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
-import { LenisProvider } from '@/components/lenis-provider';
+import { LenisProvider } from '@/hooks/LenisProvider';
 import { AppConfig } from '@/lib/app.config';
 import { cn } from '@/lib/utils';
 import './globals.css';

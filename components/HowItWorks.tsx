@@ -15,16 +15,16 @@ const steps = [
 	{
 		step: '02',
 		icon: Mail,
-		title: 'Request your subdomain',
+		title: 'Transfer your repo',
 		description:
-			"Open a GitHub issue or send us an email at support@cloudgrids.tech. Tell us what you're building and the subdomain you'd like (e.g. myproject.cloudgrids.tech)."
+			"To get a subdomain, transfer your project's GitHub repository to the @cloudgrids organization. You retain admin access! Open a GitHub issue or email us to coordinate."
 	},
 	{
 		step: '03',
 		icon: Globe,
 		title: 'Ship it',
 		description:
-			"We'll point the subdomain at your deployment. Your project goes live on *.cloudgrids.tech — for free, as long as it stays open source."
+			"We'll set up the subdomain and point it to your deployment. Your project goes live on *.cloudgrids.tech — for free!"
 	}
 ];
 
@@ -40,7 +40,6 @@ const fadeInUp = {
 export function HowItWorks() {
 	return (
 		<section id="how-it-works" className="py-24 px-4">
-			{/* Subtle divider */}
 			<div className="mx-auto max-w-6xl">
 				<div className="mb-12 text-center">
 					<Badge variant="outline" className="mb-4 border-primary/20 bg-primary/5 text-primary">
@@ -54,7 +53,6 @@ export function HowItWorks() {
 					</p>
 				</div>
 
-				{/* Steps */}
 				<div className="grid grid-cols-1 gap-6 md:grid-cols-3">
 					{steps.map((s, i) => {
 						const Icon = s.icon;
@@ -68,7 +66,6 @@ export function HowItWorks() {
 								viewport={{ once: true, margin: '-60px' }}
 								className="group relative flex flex-col gap-4 rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-md dark:hover:shadow-primary/5"
 							>
-								{/* Step number */}
 								<div className="flex items-center justify-between">
 									<div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
 										<Icon className="size-5 text-primary" aria-hidden="true" />
@@ -83,7 +80,6 @@ export function HowItWorks() {
 									<p className="text-xs leading-relaxed text-muted-foreground">{s.description}</p>
 								</div>
 
-								{/* Connector line (hidden on last) */}
 								{i < steps.length - 1 && (
 									<div className="absolute -right-3 top-1/2 hidden h-px w-6 -translate-y-1/2 bg-border md:block" />
 								)}
@@ -92,7 +88,6 @@ export function HowItWorks() {
 					})}
 				</div>
 
-				{/* CTA note */}
 				<motion.p
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
