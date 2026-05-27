@@ -67,10 +67,10 @@ export default function OgImage() {
 							color: 'transparent'
 						}}
 					>
-						grids
+						Grids
 					</span>
 				</div>
-
+				<p style={{ fontSize: 24, fontWeight: 500, color: '#6b7280', letterSpacing: '0.08em' }}>Ship your project on</p>
 				<div
 					style={{
 						fontSize: 28,

@@ -2,48 +2,10 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ALL_PROJECTS } from '@/lib/constants';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, GitBranch, Globe, Package } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
-
-const projects = [
-	{
-		id: 'tools',
-		icon: Globe,
-		name: 'Tools',
-		description:
-			'A curated suite of developer productivity tools — JSON formatter, regex tester, color converter, and more. Works completely offline.',
-		tags: ['Developer Tools', 'Offline', 'Open Source'],
-		status: 'live' as const,
-		links: [
-			{ label: 'Visit', href: 'https://tools.cloudgrids.tech' },
-			{ label: 'GitHub', href: 'https://github.com/cloudgrids/tools' }
-		]
-	},
-	{
-		id: 'downflux',
-		icon: Package,
-		name: 'downflux',
-		description:
-			'A modular TypeScript media extraction and download toolkit. Allows users to download contents from websites along with metadata.',
-		tags: ['TypeScript', 'Media', 'npm'],
-		status: 'live' as const,
-		links: [
-			{ label: 'npm', href: 'https://www.npmjs.com/package/downflux' },
-			{ label: 'GitHub', href: 'https://github.com/forkts/downflux' }
-		]
-	},
-	{
-		id: 'docs',
-		icon: GitBranch,
-		name: 'docs.cloudgrids.tech',
-		description:
-			'Unified documentation hub for all CloudGrids projects. Guides, API references, and tutorials — coming soon.',
-		tags: ['Documentation', 'Guides', 'API'],
-		status: 'coming-soon' as const,
-		links: []
-	}
-];
 
 const fadeInUp = {
 	hidden: { opacity: 0, y: 24 },
@@ -71,7 +33,7 @@ export function Projects() {
 				</div>
 
 				<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-					{projects.map((project, i) => {
+					{ALL_PROJECTS.map((project, i) => {
 						const Icon = project.icon;
 						return (
 							<motion.div
