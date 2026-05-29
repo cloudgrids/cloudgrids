@@ -40,26 +40,6 @@ If you are building an open-source tool, library, or portfolio, you can host it 
 - **[Tools](https://github.com/cloudgrids/tools)**: 12 essential developer utilities. Zero installs. Zero backend. Works completely offline.
 - **[Downflux](https://github.com/forkts/downflux)**: Open-source utilities for Next.js and TypeScript ecosystems.
 
----
-
-## Quick Start
-
-To run this landing page locally:
-
-```bash
-# Clone the repository
-git clone https://github.com/cloudgrids/cloudgrids.git
-cd cloudgrids
-
-# Install dependencies (uses pnpm)
-pnpm install
-
-# Run locally
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see the result.
-
 ## Contributing
 
 Contributions are what make open source amazing. Any contribution you make is **greatly appreciated**.
