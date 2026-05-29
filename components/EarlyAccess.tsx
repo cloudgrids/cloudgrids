@@ -1,6 +1,9 @@
 'use client';
 
+import { SectionGlow } from '@/components/section/section-glow';
+import { SectionWrapper } from '@/components/section/section-wrapper';
 import { Button } from '@/components/ui/button';
+import { StatusBadge } from '@/components/ui/status-badge';
 import { EARLY_ACCESS_FORM_URL } from '@/lib/constants';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
@@ -14,25 +17,26 @@ const perks = [
 
 export function EarlyAccess() {
 	return (
-		<section id="early-access" className="py-24 px-4 relative overflow-hidden">
-			{/* Background glow */}
-			<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,oklch(0.5_0.2_230/7%),transparent)] dark:bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,oklch(0.72_0.18_220/9%),transparent)]" />
-			<div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-primary/3 to-transparent" />
+		<SectionWrapper
+			id="early-access"
+			className="relative overflow-hidden"
+			containerClassName="text-center"
+			maxWidth="3xl"
+		>
+			<SectionGlow variant="balanced" />
 
-			<div className="relative mx-auto max-w-3xl text-center">
-				{/* Badge */}
+			<div className="relative">
+				{/* Status badge */}
 				<motion.div
 					initial={{ opacity: 0, y: 16 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					transition={{ duration: 0.4 }}
-					className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-4 py-1.5 text-xs font-semibold text-primary"
+					className="mb-6 flex justify-center"
 				>
-					<span className="relative flex size-1.5">
-						<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-						<span className="relative inline-flex rounded-full size-1.5 bg-primary" />
-					</span>
-					Pre-launch · Accepting early signups
+					<StatusBadge className="px-4 py-1.5 text-xs font-semibold">
+						Pre-launch · Accepting early signups
+					</StatusBadge>
 				</motion.div>
 
 				{/* Headline */}
@@ -111,6 +115,6 @@ export function EarlyAccess() {
 					</p>
 				</motion.div>
 			</div>
-		</section>
+		</SectionWrapper>
 	);
 }

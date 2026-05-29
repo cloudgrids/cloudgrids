@@ -8,6 +8,7 @@ import { NAVBAR_LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { LogIn, UserPlus } from 'lucide-react';
 
 export function Navbar() {
 	const [scrolled, setScrolled] = useState(false);
@@ -54,14 +55,18 @@ export function Navbar() {
 				<div className="flex items-center gap-2">
 					<ThemeToggle />
 					<GithubStar />
-					<Button
-						size="sm"
-						id="nav-get-subdomain"
-						onClick={() => scrollTo('#how-it-works')}
-						className="hidden md:inline-flex"
-					>
-						Get a subdomain
-					</Button>
+					<Link href="/auth/login" id="nav-login" className="hidden md:inline-flex">
+						<Button size="sm" variant="outline" className="gap-1.5">
+							<LogIn className="size-3.5" />
+							Log in
+						</Button>
+					</Link>
+					<Link href="/auth/signup" id="nav-signup" className="hidden md:inline-flex">
+						<Button size="sm" className="gap-1.5">
+							<UserPlus className="size-3.5" />
+							Sign up
+						</Button>
+					</Link>
 				</div>
 			</nav>
 		</header>

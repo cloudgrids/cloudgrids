@@ -1,7 +1,9 @@
 'use client';
 
 import { Logo } from '@/components/Logo';
+import { SectionGlow } from '@/components/section/section-glow';
 import { Button } from '@/components/ui/button';
+import { StatusBadge } from '@/components/ui/status-badge';
 import { EARLY_ACCESS_FORM_URL } from '@/lib/constants';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronRight, GitBranch, Globe, Zap } from 'lucide-react';
@@ -22,8 +24,7 @@ export function Hero() {
 			id="hero"
 			className="relative flex min-h-screen flex-col items-center justify-center px-4 pt-14 text-center overflow-hidden"
 		>
-			{/* Background glow */}
-			<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_55%,oklch(0.5_0.2_230/10%),transparent)] dark:bg-[radial-gradient(ellipse_70%_50%_at_50%_55%,oklch(0.72_0.18_220/12%),transparent)]" />
+			<SectionGlow variant="wide" />
 			<div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-px h-48 bg-gradient-to-b from-transparent via-primary/30 to-transparent" />
 
 			<div className="relative z-10 mx-auto max-w-4xl">
@@ -32,13 +33,9 @@ export function Hero() {
 					initial={{ opacity: 0, y: 16 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.45, delay: 0.05 }}
-					className="mb-6 inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/8 px-3 py-1 text-xs font-medium text-primary"
+					className="mb-6 flex justify-center"
 				>
-					<span className="relative flex size-1.5">
-						<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-						<span className="relative inline-flex rounded-full size-1.5 bg-primary" />
-					</span>
-					Early Access — Be the first to deploy
+					<StatusBadge>Early Access — Be the first to deploy</StatusBadge>
 				</motion.div>
 
 				{/* Logo */}

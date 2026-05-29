@@ -106,6 +106,14 @@ export const RESOURCES = [
 		href: '/deploy'
 	},
 	{
+		label: 'Log in',
+		href: '/auth/login'
+	},
+	{
+		label: 'Sign up',
+		href: '/auth/signup'
+	},
+	{
 		label: 'Contact',
 		href: 'mailto:support@cloudgrids.tech'
 	}
