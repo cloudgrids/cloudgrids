@@ -11,7 +11,7 @@ export const LEGAL = [
 export const PROJECTS = [
 	{
 		label: 'Documentation',
-		href: 'https://docs.cloudgrids.tech'
+		href: '/docs'
 	}
 ];
 
