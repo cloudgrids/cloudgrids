@@ -58,8 +58,7 @@ const RECENTLY_UPDATED = [
 	{ title: 'GitHub Deployment Guide', category: 'Guides', updatedDays: 1 },
 	{ title: 'POST /deployments', category: 'API Reference', updatedDays: 2 },
 	{ title: 'Environment Variables Setup', category: 'Guides', updatedDays: 3 },
-	{ title: 'Custom Domains & SSL', category: 'Guides', updatedDays: 5 },
-	{ title: 'downflux SDK Reference', category: 'SDK', updatedDays: 6 }
+	{ title: 'Custom Domains & SSL', category: 'Guides', updatedDays: 5 }
 ];
 
 const CATEGORY_BADGE_STYLES: Record<string, string> = {

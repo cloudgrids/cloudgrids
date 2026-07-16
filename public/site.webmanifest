@@ -1,7 +1,7 @@
 {
 	"id": "cloudgrids",
 	"name": "CloudGrids",
-	"description": "An open-source organisation building developer tools and powering *.cloudgrids.tech subdomains.",
+	"description": "A cloud deployment platform powering *.cloudgrids.tech subdomains.",
 	"short_name": "CloudGrids",
 	"start_url": "/",
 	"background_color": "#050510",

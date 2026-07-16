@@ -10,7 +10,6 @@ export const AppConfig = {
 		'deployment platform',
 		'github deploy',
 		'cloud hosting',
-		'developer tools',
 		'indie hackers',
 		'ai hosting',
 		'free subdomain',
@@ -38,8 +37,6 @@ export const AppConfig = {
 		email: 'support@cloudgrids.tech'
 	},
 	github: {
-		org: 'https://github.com/cloudgrids',
-		tools: 'https://github.com/cloudgrids/tools',
-		downflux: 'https://github.com/forkts/downflux'
+		org: 'https://github.com/cloudgrids'
 	}
 };

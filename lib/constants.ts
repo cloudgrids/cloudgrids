@@ -10,14 +10,6 @@ export const LEGAL = [
 
 export const PROJECTS = [
 	{
-		label: 'tools.cloudgrids.tech',
-		href: 'https://tools.cloudgrids.tech'
-	},
-	{
-		label: 'downflux',
-		href: 'https://www.npmjs.com/package/downflux'
-	},
-	{
 		label: 'Documentation',
 		href: 'https://docs.cloudgrids.tech'
 	}
@@ -51,38 +43,6 @@ export const ALL_PROJECTS = [
 		tags: ['Deployment', 'Infrastructure', 'Cloud'],
 		status: 'active' as const,
 		links: [{ label: 'Platform', href: 'https://cloudgrids.tech' }]
-	},
-	{
-		id: 'tools',
-		icon: Globe,
-		name: 'Tools',
-		description:
-			'A growing suite of developer utilities designed to simplify debugging, formatting, validation, and everyday engineering workflows.',
-		tags: ['Developer Tools', 'Utilities', 'Productivity'],
-		status: 'live' as const,
-		links: [
-			{ label: 'Visit', href: 'https://tools.cloudgrids.tech' },
-			{ label: 'GitHub', href: 'https://github.com/cloudgrids/tools' }
-		]
-	},
-	{
-		id: 'downflux',
-		icon: Package,
-		name: 'downflux',
-		description:
-			'A modular TypeScript toolkit for structured media extraction, metadata processing, and automated content workflows.',
-		tags: ['TypeScript', 'Automation', 'Media'],
-		status: 'live' as const,
-		links: [
-			{
-				label: 'npm',
-				href: 'https://www.npmjs.com/package/downflux'
-			},
-			{
-				label: 'GitHub',
-				href: 'https://github.com/forkts/downflux'
-			}
-		]
 	},
 	{
 		id: 'docs',
