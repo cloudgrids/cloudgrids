@@ -1,49 +1,105 @@
 <div align="center">
 
-[![CloudGrids](https://media.cloudgrids.tech/cloudgrids/apple-icon-180.png)]()
+<img src="./public/logo.svg" alt="CloudGrids logo" width="112" height="112" />
 
-<h1>CloudGrids</h1>
+# CloudGrids
 
-<p><strong>CloudGrids is an open-source organisation that builds developer tools and lets builders host their projects under *.cloudgrids.tech subdomains. Ship your next project under our domain.</strong></p>
+**Deploy from GitHub. Go live on `*.cloudgrids.tech` in minutes.**
 
-> An open-source org for builders.
-> Get your own \*.cloudgrids.tech subdomain for free.
+[Website](https://cloudgrids.tech) · [Documentation](https://cloudgrids.tech/docs) · [GitHub organization](https://github.com/cloudgrids) · [Support](mailto:support@cloudgrids.tech)
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)](https://typescriptlang.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple?style=flat-square)](LICENSE)
 
 </div>
 
----
+## About
 
-##### What is CloudGrids?
+CloudGrids is an open-source cloud platform for developers, indie hackers, and AI builders. It brings deployment workflows, developer tools, media services, metadata utilities, agent hosting, and project resources into one ecosystem.
 
-CloudGrids is the open-source organization powering `cloudgrids.tech`. We build developer tools and provide a free subdomain service for open-source projects.
+The platform is being developed publicly. Features marked as coming soon in the interface are not yet production services; internal staging and deployment automation will be introduced separately.
 
-If you are building an open-source tool, library, or portfolio, you can host it under `[your-project].cloudgrids.tech` for free.
+## Current application areas
 
----
+- Cloud hosting dashboards for deployments, domains, environment variables, logs, and templates.
+- Unified documentation and API references at `/docs`.
+- Media upload, CDN, and transformation interfaces.
+- Metadata inspection, endpoint discovery, and testing tools.
+- AI UI generation and component galleries.
+- Agent hosting, boilerplates, creator tools, and scraping workflows.
+- Public privacy, legal, and project information pages.
 
-##### Get your own \*.cloudgrids.tech subdomain
+## Development
 
-1. **Build something cool**: Create your open-source project and host it anywhere (Vercel, Netlify, GitHub Pages, etc.).
-2. **Process**: CloudGrids is an open-source platform for developers, indie hackers, and AI builders — from deployment and hosting to AI tools, media, metadata, and more. email us at `support@cloudgrids.tech` to request your subdomain.
-3. **Ship it**: We will set up the subdomain and point it to your deployment. Your project goes live on `*.cloudgrids.tech`!
+Requirements:
 
----
+- Node.js 20 or newer
+- pnpm
 
-##### 🛠️ Our Open-Source Projects
+```bash
+git clone https://github.com/cloudgrids/cloudgrids.git
+cd cloudgrids
+pnpm install
+pnpm dev
+```
 
-- **[Tools](https://github.com/cloudgrids/tools)**: 12 essential developer utilities. Zero installs. Zero backend. Works completely offline.
-- **[Downflux](https://github.com/forkts/downflux)**: Open-source utilities for Next.js and TypeScript ecosystems
+Open [http://localhost:3000](http://localhost:3000).
 
-##### Contributing
+### Commands
 
-Contributions are what make open source amazing. Any contribution you make is **greatly appreciated**.
+```bash
+pnpm dev             # start the Next.js development server
+pnpm build           # create a production build
+pnpm start           # run the production server
+pnpm lint            # run ESLint
+pnpm typecheck       # run TypeScript validation
+pnpm generate-icons  # regenerate committed application icons
+```
 
-##### License
+## Project structure
 
-MIT © [CloudGrids Contributors](LICENSE)
+```text
+app/                  Next.js App Router pages and product areas
+components/           shared navigation, footer, branding, and UI
+hooks/                client-side application hooks and providers
+lib/                  application metadata, constants, and utilities
+public/               logo, icons, screenshots, and web manifest
+```
 
----
+## Branding
 
-<div align="center">
-<p>If this project helped you, consider giving it a ⭐ on GitHub!</p>
-</div>
+The primary CloudGrids mark combines a cloud outline with a four-cell grid. The canonical assets are:
+
+- [`components/Logo.tsx`](components/Logo.tsx) for React interfaces and generated metadata images.
+- [`public/logo.svg`](public/logo.svg) for documentation and external use.
+- [`public/icons/`](public/icons/) for application and installable-web-app icons.
+- [`app/favicon.ico`](app/favicon.ico) for browser tabs and bookmarks.
+
+Keep the mark’s proportions and cyan-blue-magenta gradient intact. Regenerate derived icons after changing the source logo.
+
+## Documentation
+
+Documentation is part of this application and is served at:
+
+```text
+https://cloudgrids.tech/docs
+```
+
+Do not use `docs.cloudgrids.tech` unless that separate hostname is configured and deployed in the future.
+
+## Contributing
+
+Issues and pull requests are welcome. Before submitting a change:
+
+```bash
+pnpm typecheck
+pnpm lint
+pnpm build
+```
+
+Keep public descriptions aligned with functionality that is actually available. Do not present planned staging, billing, deployment automation, or other coming-soon services as production-ready.
+
+## License
+
+MIT © CloudGrids contributors.

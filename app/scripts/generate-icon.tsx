@@ -31,8 +31,6 @@ export default async function generateIcon(width: number, height: number, name: 
 }
 
 async function run() {
-	await generateIcon(1080, 1920, 'mobile.png', 'screenshots');
-	await generateIcon(1920, 1080, 'desktop.png', 'screenshots');
 	await generateIcon(180, 180, 'apple-icon-180.png', 'icons');
 	await generateIcon(192, 192, 'icon-192.png', 'icons');
 	await generateIcon(512, 512, 'icon-512.png', 'icons');
