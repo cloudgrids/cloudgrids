@@ -27,8 +27,6 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-// ─── Platform Products ────────────────────────────────────────────────────────
-
 const PRODUCTS = [
 	{
 		id: 'hosting',
