@@ -3,11 +3,10 @@
 import { Logo } from '@/components/Logo';
 import { Separator } from '@/components/ui/separator';
 import { AppConfig } from '@/lib/app.config';
-import { LEGAL, PROJECTS, RESOURCES, SOCIALS } from '@/lib/constants';
+import { LEGAL, RESOURCES, SOCIALS } from '@/lib/constants';
 import Link from 'next/link';
 
 const footerLinks = {
-	Products: PROJECTS,
 	Resources: RESOURCES,
 	Legal: LEGAL
 };

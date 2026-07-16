@@ -8,13 +8,6 @@ export const LEGAL = [
 	{ label: 'Terms of Service', href: '/legal' }
 ];
 
-export const PROJECTS = [
-	{
-		label: 'Documentation',
-		href: '/docs'
-	}
-];
-
 export const SOCIALS = [
 	{
 		icon: GitBranch,
@@ -41,18 +34,8 @@ export const ALL_PROJECTS = [
 		description:
 			'Modern deployment workflows for developers and creators. Launch applications, manage deployments, and scale projects with a unified cloud-native platform.',
 		tags: ['Deployment', 'Infrastructure', 'Cloud'],
-		status: 'active' as const,
+		status: 'active' as 'active' | 'coming-soon',
 		links: [{ label: 'Platform', href: 'https://cloudgrids.tech' }]
-	},
-	{
-		id: 'docs',
-		icon: Boxes,
-		name: 'Documentation',
-		description:
-			'Unified documentation, API references, deployment guides, and technical resources for the CloudGrids ecosystem.',
-		tags: ['Documentation', 'API', 'Guides'],
-		status: 'coming-soon' as const,
-		links: []
 	}
 ];
 

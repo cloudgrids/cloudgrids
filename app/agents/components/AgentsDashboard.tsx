@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { ArrowUpRight, Bot, Clock, Cpu, Store, Zap } from 'lucide-react';
+import { Bot, Clock, Cpu, Store, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 const STATS = [
@@ -64,8 +64,8 @@ export function AgentsDashboard() {
 					</CardContent></Card>
 				</TabsContent>
 				<TabsContent value='links'>
-					<div className='grid grid-cols-1 gap-3 sm:grid-cols-3'>
-						{[{ label: 'Deploy Agent', desc: 'Launch a new autonomous agent', href: '/agents/deploy', icon: Bot }, { label: 'Marketplace', desc: 'Browse pre-built agent templates', href: '/agents/marketplace', icon: Store }, { label: 'Docs', desc: 'Agent hosting API reference', href: '/docs/api', icon: ArrowUpRight }].map((l) => {
+					<div className='grid grid-cols-1 gap-3 sm:grid-cols-2'>
+						{[{ label: 'Deploy Agent', desc: 'Launch a new autonomous agent', href: '/agents/deploy', icon: Bot }, { label: 'Marketplace', desc: 'Browse pre-built agent templates', href: '/agents/marketplace', icon: Store }].map((l) => {
 							const Icon = l.icon;
 							return (<Link key={l.label} href={l.href}><Card className='cursor-pointer hover:border-primary/40 transition-all duration-200 hover:-translate-y-1'><CardHeader><div className='flex items-center gap-2 mb-1'><Icon className='size-4 text-primary' /><CardTitle className='text-sm'>{l.label}</CardTitle></div><p className='text-xs text-muted-foreground'>{l.desc}</p></CardHeader></Card></Link>);
 						})}

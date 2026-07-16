@@ -76,11 +76,10 @@ export function MetadataHome() {
 					<TabsTrigger value="calls">Recent Calls</TabsTrigger>
 				</TabsList>
 				<TabsContent value="overview">
-					<div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
 						{[
 							{ label: 'API Playground', desc: 'Test extractions in real-time', href: '/metadata/playground' },
-							{ label: 'Endpoints', desc: 'Browse all 7 API endpoints', href: '/metadata/endpoints' },
-							{ label: 'Docs', desc: 'Full API reference and guides', href: '/docs/api' }
+							{ label: 'Endpoints', desc: 'Browse all 7 API endpoints', href: '/metadata/endpoints' }
 						].map((card) => (
 							<Link key={card.label} href={card.href}>
 								<Card className="cursor-pointer hover:border-primary/40 transition-all duration-200 hover:-translate-y-1">
